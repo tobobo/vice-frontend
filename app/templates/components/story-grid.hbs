@@ -1,0 +1,27 @@
+{{log types}}
+<ul class="story-grid" {{bind-attr style=listWidthStyle}}>
+  <li class="header row">
+    <ul>
+      <li class="header column"></li><!--
+     -->{{#each common.regionNames}}<!--
+      --><li>{{this}}</li><!--
+     -->{{/each}}
+    </ul>
+  </li>
+  {{#each grid}}
+    <li>
+      <ul>
+        <li class="header column">{{type}}</li><!--
+       -->{{#each region in regions}}<!--
+         --><li>
+              <ul>
+                {{#each story in region}}<!--
+               -->{{story-grid-item story=story}}<!--
+             -->{{/each}}
+              </ul>
+            </li><!--
+        -->{{/each}}
+      </ul>
+    </li>
+  {{/each}}
+</ul>

@@ -171,6 +171,11 @@ module.exports = function(grunt) {
                      'htmlmin:dist' // Removes comments and whitespace
                      ]));
 
+  grunt.registerTask('deploy', "Generate assets with build:dist and deploy to s3.", filterAvailable([
+                     'dist',
+                     's3'
+                     ]))
+
   // Documentation
   // -------
   grunt.registerTask('docs', "Build YUIDoc documentation.", [
@@ -212,8 +217,8 @@ module.exports = function(grunt) {
   grunt.registerTask('buildScripts', filterAvailable([
                      'jshint:app',
                      'jshint:tests',
-                     'validate-imports:app',
-                     'validate-imports:tests',
+                     //'validate-imports:app',
+                     //'validate-imports:tests',
                      'coffee',
                      'emberscript',
                      'copy:javascriptToTmp',

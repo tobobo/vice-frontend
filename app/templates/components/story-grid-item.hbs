@@ -1,0 +1,8 @@
+{{#if isExpanded}}
+  <div class="story-details">
+    {{story-form story=story}}
+    {{#if common.isTouch}}
+      <a class="button" href="#" {{action 'close'}}>Close</a>
+    {{/if}}
+  </div>
+{{/if}}

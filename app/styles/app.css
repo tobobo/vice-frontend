@@ -1,4 +1,128 @@
 /* Put your CSS here */
-html, body {
-    margin: 20px;
+html {
+  height: 100%;
 }
+
+body {
+  margin: 40px;
+  font-family: "Helvetica Neue", sans-serif;
+  font-weight: 300;
+  height: 100%;
+  min-height: 100%;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-weight: 300;
+}
+
+.story-form {
+  margin-top: 2em;
+}
+
+.story-grid {
+  margin: 2em 2em 0 0;
+  list-style-type: none;
+  border: 1px solid #AAA;
+}
+
+.story-grid > li {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  height: 140px;
+  border-bottom: 1px solid #AAA;
+}
+
+.story-grid > li.header {
+  border-width: 4px;
+}
+
+.story-grid > li > ul > li.header {
+  border-width: 4px;
+}
+
+.story-grid > li:last-of-type {
+  border-bottom: none;
+}
+
+.story-grid > li > ul {
+  list-style-type: none;
+  white-space: nowrap;
+  width: 100%;
+  height: 100%;
+}
+
+.story-grid > li > ul > li {
+  vertical-align: top;
+  white-space: normal;
+  width: 200px;
+  height: 100%;
+  display: inline-block;
+  padding: 10px;
+  border-right: 1px solid #AAA;
+}
+
+.story-grid > li > ul > li:last-of-type {
+  border-right: none;
+}
+
+.story-grid .header {
+  font-weight: 600;
+}
+
+.story-grid-item {
+  width: 20px;
+  height: 20px;
+  background-color: #666;
+  margin: 2px;
+  display: inline-block;
+  border-radius: 6px;
+  cursor: pointer;
+  position: relative;
+}
+
+.story-grid-item.greenlit {
+  background-color: #00AA00;
+}
+
+.story-grid-item.rejected {
+  background-color: #CC0000;
+}
+
+.story-grid-item .story-details {
+  position: absolute;
+  z-index: 1;
+  background-color: inherit;
+  border-radius: 6px;
+  padding: 4px;
+  cursor: default;
+}
+
+.story-form input {
+  width: 250px;
+}
+
+a.button {
+  text-decoration: none;
+  color: #F8F8F8;
+  background-color: #666;
+  padding: 5px;
+  border-radius: 6px;
+  line-height: 2em;
+  white-space: nowrap;
+}
+
+a.button.delete-story {
+  background-color: red;
+}
+
+.story-grid-item .story-details .story-form {
+  margin: 0;
+}
+

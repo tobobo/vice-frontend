@@ -1,0 +1,27 @@
+{{#if story.isNew}}Story Name: {{/if}}{{input value=story.name}}
+{{#if story.isNew}}
+  {{view Ember.Select 
+    content=regionOptions 
+    optionValuePath='content.id' 
+    optionLabelPath='content.name' 
+    value=story.region
+  }}
+  {{view Ember.Select 
+    content=typeOptions 
+    optionValuePath='content.id' 
+    optionLabelPath='content.name' 
+    value=story.type
+  }}
+{{/if}}
+{{view Ember.Select 
+  content=statusOptions 
+  optionValuePath='content.id' 
+  optionLabelPath='content.name' 
+  value=story.status
+}}
+
+{{#if story.isNew}}
+  <a href="#" class="button" {{action 'save'}}>Add Story</a>
+{{else}}
+  <a href="#" class="button delete-story" {{action 'delete'}}>Delete Story</a>
+{{/if}}
