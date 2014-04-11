@@ -9,20 +9,23 @@ StoryGridItemComponent = Ember.Component.extend
     ['pending', 'greenlit', 'rejected'][@get('story.status')]
   ).property 'story.status'
   isExpandedDidChange: (->
+
     if @get('isExpanded')
-      $('body').on 'click.storyGridItem', (e) =>
+      @set 'innerClick', false
+      $('body').on "click.#{@get('elementId')}", (e) =>
         unless @get('innerClick')
+          @set 'innerClick', false
           @set 'isExpanded', false
     else
-      $('body').off 'click.storyGridItem'
+      $('body').off "click.#{@get('elementId')}"
   ).observes 'isExpanded'
   didInsertElement: ->
-    @$('a').on 'click.storyGridItem', (e) ->
+    @$('a').on "click.#{@get('elementId')}", (e) ->
       e.stopPropagation()
 
   willDestroyElement: ->
-    $('body').off 'click.storyGridItem'
-    @$('a').off 'click.storyGridItem'
+    $('body').off "click.#{@get('elementId')}"
+    @$('a').off "click.#{@get('elementId')}"
 
   click: (e) ->
     @set 'innerClick', true
