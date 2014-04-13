@@ -12,7 +12,7 @@ StoryGridComponent = Ember.Component.extend
         []
     @get('stories').forEach (story) ->
       if story.get('type')? and story.get('region')?
-        regions = grid.objectAt(story.get('type')).get('regions').objectAt(story.get('region')).pushObject story
+        grid.objectAt(story.get('type')).get('regions').objectAt(story.get('region')).pushObject story
     grid
   ).property 'stories.@each'
 

@@ -1,3 +1,6 @@
+{{#if list}}
+  {{story.name}} <span class="type-name">({{typeName}})</span>
+{{/if}}
 {{#if isExpanded}}
   <div class="story-details">
     {{story-form story=story}}

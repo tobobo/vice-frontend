@@ -77,28 +77,39 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .story-grid-item {
+  cursor: pointer;
+  list-style-type: none;
+  display: inline-block;
+  position: relative;
+}
+
+.story-grid-item:before {
+  content: '';
   width: 20px;
   height: 20px;
   background-color: #666;
   margin: 2px;
   display: inline-block;
   border-radius: 6px;
-  cursor: pointer;
   position: relative;
 }
 
-.story-grid-item.greenlit {
+.story-grid-item .story-details {
+  background-color: #666;
+}
+
+.story-grid-item.greenlit .story-details, .story-grid-item.greenlit:before {
   background-color: #00AA00;
 }
 
-.story-grid-item.rejected {
+.story-grid-item.rejected .story-details,.story-grid-item.rejected:before {
   background-color: #CC0000;
 }
 
 .story-grid-item .story-details {
   position: absolute;
+  top: 0;
   z-index: 1;
-  background-color: inherit;
   border-radius: 6px;
   padding: 4px;
   cursor: default;
@@ -126,3 +137,38 @@ a.button.delete-story {
   margin: 0;
 }
 
+.story-grid-item.list-view {
+  display: block;
+  min-height: 32px;
+}
+
+.story-grid-item.list-view:before {
+  top: 5px;
+}
+
+.story-grid-item .type-name {
+  color: #AAA;
+  text-transform: lowercase;
+}
+
+.story-list {
+  margin-top: 20px;
+}
+
+.story-list ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+
+.story-list ul li.region {
+  margin-bottom: 15px;
+}
+
+.story-list ul li.region ul {
+  margin-left: 15px;
+}
+
+.story-list ul li.no-stories {
+  font-style: italic;
+}

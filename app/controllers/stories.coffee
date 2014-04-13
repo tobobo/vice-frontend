@@ -7,10 +7,5 @@ StoriesController = Ember.ArrayController.extend
     @pushObject @get('newStory')
   ).observes 'newStory.id'
 
-  filteredStories: (->
-    @get('model').filter (story) ->
-      story.get('id')?
-  ).property 'model.@each.id'
-
 
 `export default StoriesController`

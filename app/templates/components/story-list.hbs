@@ -1,0 +1,20 @@
+<ul class="regions">
+  {{#each region in list}}
+    <li class="region">
+      <strong>{{region.region}}</strong>
+      <ul>
+        {{#if region.empty}}
+          <li class="no-stories">no stories</li>
+        {{else}}
+          {{#each type in region.types}}
+            {{#each type}}
+              <li>
+                {{story-grid-item story=this list=true}}
+              </li>
+            {{/each}}
+          {{/each}}
+        {{/if}}
+      </ul>
+    </li>
+  {{/each}}
+</ul>

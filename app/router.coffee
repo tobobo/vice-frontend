@@ -2,6 +2,8 @@ Router = Ember.Router.extend
   location: 'history'
 
 Router.map ->
-  this.resource 'stories'
+  @resource 'stories', ->
+    @route 'list',
+      path: 'list'
 
 `export default Router`
